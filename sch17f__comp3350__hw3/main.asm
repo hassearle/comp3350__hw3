@@ -14,12 +14,12 @@ ExitProcess proto,dwExitCode:dword
 
 .code
 	main proc
-		mov eax, 0
-		mov eax, sizeof input
-		
+		mov esi, 0
 		mov ecx, lengthof input 
 		L:
-
+			mov al, input[esi]			; get a character from source
+			mov output[esi], al			; store it in the target
+			inc esi
 
 		loop L
 		
